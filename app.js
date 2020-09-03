@@ -7,7 +7,7 @@ import routes from './src/routes/routes';
 import fileupload from 'express-fileupload';
 const enviromentVariables = require('dotenv').config().parsed;
 const app = express();
-const port = enviromentVariables.PORT || 3000;
+const port = process.env.PORT || 3000;
 
 
 app.use(express.urlencoded({ extended: true }));
