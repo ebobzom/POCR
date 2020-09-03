@@ -2,10 +2,10 @@ import mysql from 'mysql';
 const enviromentVariables = require('dotenv').config().parsed;
 const connectionString = '';
 const databaseConfiguration =  {
-    host : enviromentVariables.HOST,
-    user : enviromentVariables.USER,
-    password : enviromentVariables.PASSWORD,
-    database : enviromentVariables.DATABASE
+    host : process.env.HOST,
+    user : process.env.USER,
+    password : process.env.PASSWORD,
+    database : process.env.DATABASE
 };
 console.log('database connection', databaseConfiguration)
 const db = mysql.createPool( connectionString  || databaseConfiguration );
