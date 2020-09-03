@@ -9,7 +9,7 @@ function verifyToken(req, res, next){
         if(token.startsWith(checkBearer)){
             token = token.slice(checkBearer.length, token.length);
         }
-        jwt.verify(token, enviromentVariables.TOKEN_SECRET, (err, decoded) => {
+        jwt.verify(token, process.env.TOKEN_SECRET, (err, decoded) => {
             if(err){
                 return res.status(400).json({
                     sucess: false,

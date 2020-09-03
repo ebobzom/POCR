@@ -73,7 +73,7 @@ signupRouter.post('/signup', validation, (req, res) => {
                             isEnabled: result1[0].isEnabled,
                             roleID: result1[0].roleID  
                         }
-                        jwt.sign(dataToBeStored, enviromentVariables.TOKEN_SECRET, { expiresIn: '24h' }, (err, tokenValue) => {
+                        jwt.sign(dataToBeStored, process.env.TOKEN_SECRET, { expiresIn: '24h' }, (err, tokenValue) => {
                             if(err){
                                 return res.status(500).json({
                                     success: false,

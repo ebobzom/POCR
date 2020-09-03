@@ -7,7 +7,7 @@ const databaseConfiguration =  {
     password : process.env.PASSWORD,
     database : process.env.DATABASE
 };
-console.log('database connection', databaseConfiguration)
+// console.log('database connection', databaseConfiguration)
 const db = mysql.createPool( connectionString  || databaseConfiguration );
 
 db.on('connection', () => {
