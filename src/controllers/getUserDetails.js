@@ -78,7 +78,8 @@ userDetailsRouter.get('/user', verifyToken, (req, res) => {
                                             states: States,
                                             LGA: LGA,
                                             MDA: MDA,
-                                            countries: Countries
+                                            countries: Countries,
+                                            gender: [{genderID: 1, gender: 'Male'}, {genderID: 2, gender: 'Female'}]
                                         }
 
                                     });
