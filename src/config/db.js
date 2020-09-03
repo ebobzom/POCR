@@ -1,5 +1,4 @@
 import mysql from 'mysql';
-const a = require('dotenv').config()
 const enviromentVariables = require('dotenv').config().parsed;
 const connectionString = '';
 const databaseConfiguration =  {

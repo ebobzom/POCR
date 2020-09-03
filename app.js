@@ -4,6 +4,7 @@ import hpp from 'hpp';
 import xss from 'xss-clean';
 import compression from 'compression';
 import routes from './src/routes/routes';
+import fileupload from 'express-fileupload';
 const enviromentVariables = require('dotenv').config().parsed;
 const app = express();
 const port = enviromentVariables.PORT || 3000;
@@ -15,7 +16,7 @@ app.use(cors());
 app.use(hpp());
 app.use(xss());
 app.use(compression());
-
+app.use(fileupload({ useTempFiles: true }));
 // All routes
 routes(app);
 
