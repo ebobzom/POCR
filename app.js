@@ -9,7 +9,7 @@ const enviromentVariables = require('dotenv').config().parsed;
 const app = express();
 const port = process.env.PORT || 3000;
 
-
+app.options('*', cors())
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cors());
