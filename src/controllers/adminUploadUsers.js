@@ -49,10 +49,10 @@ adminUploadUsers.post('/admin/uploadUsers', validation, verifyToken, (req, res) 
                 msg: 'All users already in database'
             });
         }
-        const query = 'INSERT INTO users(registrationID, email) VALUES (?)'
+        const query = 'INSERT INTO users(registrationID, email, firstName, mda, mobileNumber) VALUES (?)'
         const convertedUsersIntoArrayOfArrays = filteredUsers.map((value) => {
             let userID = uuid4().split('-').join('');
-            return [userID, ...Object.values(value)];
+            return [userID, value.firstName, value.mda, value.mobileNumber];
         });
 
         let count = 0;
