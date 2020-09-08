@@ -4,6 +4,7 @@ import signupRouter from '../controllers/signup';
 import loginRouter from '../controllers/login';
 import getUserDetailsRouter from '../controllers/getUserDetails';
 import userProfileImageUpload from '../controllers/uploadProfilePicture';
+import getRegisteredUsersRouter from '../controllers/getRegisteredUsers';
 
 const baseURL = '/api/v1'
 
@@ -14,6 +15,7 @@ function routes(app){
     app.use(baseURL, loginRouter);
     app.use(baseURL, getUserDetailsRouter);
     app.use(baseURL, userProfileImageUpload);
+    app.use(baseURL, getRegisteredUsersRouter);
 }
 
 export default routes;
