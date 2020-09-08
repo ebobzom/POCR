@@ -8,7 +8,6 @@ import db from '../config/db';
 const updateProfileRouter = express.Router();
 
 const  validation = [
-    check('email').isEmail(),
     check('firstName').exists().isString(),
     check('lastName').exists().isString(),
     check('otherName').exists().isString(),
@@ -39,7 +38,7 @@ updateProfileRouter.put('/user', verifyToken, validation, (req, res) => {
     }
 
     const {
-        firstName, lastName,otherName, dateOfBirth, email,gradeLevel, 
+        firstName, lastName,otherName, dateOfBirth, gradeLevel, 
         gender, mobileNumber, currentPage, descriptionOfJobRole,
         state, mda, country, LGAID
     } = req.body;
